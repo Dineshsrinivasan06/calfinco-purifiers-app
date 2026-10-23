@@ -1,0 +1,1 @@
+printf "node_modules/\n.expo/\ndist/\nstatic-build/\n.env*\n*.jks\n*.keystore\n" > .gitignore

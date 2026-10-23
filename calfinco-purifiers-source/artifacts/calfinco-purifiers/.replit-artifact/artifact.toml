@@ -1,0 +1,24 @@
+kind = "mobile"
+previewPath = "/"
+title = "Calfinco Purifiers"
+description = "An Android-first water purifier shopping app with customer shopping, dealer wholesale ordering, and an admin service desk. Includes seeded product data and local demo persistence, with cloud and social integrations clearly separated from live functionality."
+version = "1.0.0"
+id = "artifacts/calfinco-purifiers"
+router = "expo-domain"
+
+[[services]]
+name = "expo"
+ensurePreviewReachable = "/status"
+paths = [ "/" ]
+localPort = 23428
+
+[services.development]
+run = "pnpm --filter @workspace/calfinco-purifiers run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/calfinco-purifiers", "run", "build" ]
+run = [ "pnpm", "--filter", "@workspace/calfinco-purifiers", "run", "serve" ]
+
+[services.env]
+PORT = "23428"
+BASE_PATH = "/"
